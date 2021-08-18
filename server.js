@@ -32,11 +32,19 @@ server.listen(port, () => {
   console.log(port + " running");
 });
 
+let onlineCount = 0;
+
 io.on("connection", (socket) => {
-  console.log("user connected");
+  console.log("+");
+  onlineCount++;
+  console.log(onlineCount + " online");
+  io.emit("oc", onlineCount);
 
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.log("-");
+    onlineCount--;
+    console.log(onlineCount + "online");
+    io.emit("oc", onlineCount);
   });
 
   socket.on("message", (msg) => {

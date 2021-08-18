@@ -1,9 +1,10 @@
-const socket = io.connect();
+const socket = io.connect("ws://localhost:5500");
 
 let form = document.getElementById("form");
 let input = document.getElementById("input");
 let username = document.getElementById("username");
 let typingBox = document.getElementById("typing-box");
+let onlineCounter = document.getElementById("oc");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -38,5 +39,9 @@ socket.on("message", (msg) => {
   let item = document.createElement("li");
   item.innerHTML = msg;
   messages.appendChild(item);
-  window.scrollTo(0, document.body.scrollHeight);
+  window.scrollTo(0, document.body.scrollHeight); //scrolls to bottom
+});
+
+socket.on("oc", (oc) => {
+  onlineCounter.innerHTML = oc;
 });
