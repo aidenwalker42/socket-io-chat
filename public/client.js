@@ -1,4 +1,4 @@
-const socket = io("ws://localhost:3000");
+const socket = io.connect();
 
 let form = document.getElementById("form");
 let input = document.getElementById("input");
