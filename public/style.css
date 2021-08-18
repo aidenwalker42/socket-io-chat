@@ -25,10 +25,26 @@ h4 {
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
+@media only screen and (max-width: 900px) {
+  #form {
+    flex-direction: column;
+    padding: 0.25rem;
+    bottom: 0px;
+    height: 16rem;
+  }
+}
+
 #online-container {
   display: flex;
   align-items: center;
   margin-right: 0.5rem;
+}
+@media only screen and (max-width: 900px) {
+  #online-container {
+    justify-content: center;
+    margin-bottom: -1.5rem;
+    margin-top: -1rem;
+  }
 }
 #online-container img {
   width: 2rem;
@@ -75,6 +91,15 @@ h6 {
   background-color: #393e46;
   color: #d65a31;
 }
+@media only screen and (max-width: 900px) {
+  #username {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+  }
+}
 #username:focus {
   outline: none;
 }
@@ -86,6 +111,12 @@ h6 {
   border-radius: 3px;
   outline: none;
   color: #eeeeee;
+}
+@media only screen and (max-width: 900px) {
+  #form > button {
+    padding: 1rem 2rem;
+    margin: 1rem;
+  }
 }
 
 #messages {
