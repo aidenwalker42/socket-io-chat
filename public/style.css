@@ -56,15 +56,25 @@ h2 {
   margin-left: 0.5rem;
 }
 #typing-box {
-  position: fixed;
-  bottom: 3rem;
+  position: relative;
+  /* bottom: 0rem; */
   background-color: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   display: flex;
 }
+@media only screen and (max-width: 900px) {
+  #typing-box {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    display: flex;
+    margin-bottom: 10rem;
+  }
+}
 h6 {
   margin: 0.25rem;
   color: #eeeeee;
+  margin-left: 1rem;
 }
 #input {
   border: none;
@@ -118,10 +128,9 @@ h6 {
     margin: 1rem;
   }
 }
-
 #messages {
   list-style-type: none;
-  margin-bottom: 3rem;
+  margin-bottom: 0rem;
   padding: 0;
 }
 #messages > li {
