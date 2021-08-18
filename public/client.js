@@ -27,7 +27,7 @@ input.addEventListener("input", (e) => {
 
 socket.on("typing", (bool, user) => {
   if (bool) {
-    typingBox.innerHTML =
+    typingBox.innerHTML +=
       "<h6 id='user-" + user + "'>" + user + " is typing...</h6>";
   } else {
     document.getElementById("user-" + user).remove();
